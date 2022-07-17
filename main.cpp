@@ -8,14 +8,14 @@
 
 void doargs(int argc, char **argv, DHCP_Client *dhcl)
 {
-    char ch;
+    int ch;
 
     if (argc == 1)
     {
         printf("SYNAPSIS: %s -d devname -c ciaddr -g giaddr -r reqip -s server -l loglevel -v\n", argv[0]);
         exit(1);
     }
-    while ((ch = getopt(argc, argv, "c:g:h:s:vl:d:r:")) > 0)
+    while ((ch = getopt(argc, argv, "c:g:h:s:vl:d:r:")) != -1)
     {
         switch (ch)
         {
